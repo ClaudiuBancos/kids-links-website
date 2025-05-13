@@ -413,15 +413,28 @@
       ctx.scale(scale, scale)
       ctx.textAlign = 'center'
       changeCode(grids.orig, grids.orig.code)
+      
+      // Load saved code if it exists
+      let savedCode = localStorage.getItem(`tixy_pattern_${i}`)
+      if (savedCode) {
+        grids.copy.code = savedCode
+      }
       changeCode(grids.copy, grids.copy.code)
       draw()
       input.value = grids.copy.code
-      input.addEventListener('input', () => { changeCode(grids.copy, input.value) })
+      input.addEventListener('input', () => { 
+        storeCode(i, input.value)
+        changeCode(grids.copy, input.value) 
+      })
 
       $games.append($game)
       observer.observe($game)
 
       if (lastOne && customCode) $game.scrollIntoView()
+
+      function storeCode(patternIndex, newCode){
+        localStorage.setItem(`tixy_pattern_${patternIndex}`, newCode)
+      }
 
       function changeCode (grid, newCode) {
         try {
