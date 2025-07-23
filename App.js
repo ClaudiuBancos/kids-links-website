@@ -12,6 +12,7 @@ export default function App() {
 	return html`
 		<h1>Links for Luke and Nathan</h1>
 		<${Section}>
+			<${Link} title="Letter Sounds" url="https://phonicsandstuff.com/phonemes" image="LetterSounds.png"/>
 			<${Link} title="Kindergarten Math" url="https://www.ixl.com/math/kindergarten" image="KindergartenMath.png"/>
 			<${Link} title="Pre-K Language Arts" url="https://www.ixl.com/ela/pre-k" image="PreKLanguageArts.png"/>
 			<${Link} title="TypeTastic!" url="https://typetastic.com/learn.html" image="TypeTastic.png" style="br-20"/>
@@ -21,6 +22,8 @@ export default function App() {
 			<${Link} title="Regular Tixy" url="https://www.mathsuniverse.com/tixy/" image="tixy.png" style="br-20"/>
 			<${Link} title="Nathan's Tixy" url="tixy.html" image="nathan_tixy.png" style="br-20"/>
 			<${Link} title="MolView" url="https://app.molview.com/" image="MolView.png"/>
+			<${Link} title="Morpheme Mix" url="https://phonicsandstuff.com/puzzles/morpheme-mix/" image="MorphemeMix.png"/>
+			<${Link} title="EdShed Letter Tiles" url="https://www.edshed.com/en-us/lettertiles" image="LetterTiles.png"/>
 		<//>
 		<${Section}>
 			<${Link} title="Lode Runner Web Game" url="https://loderunnerwebgame.netlify.app/" image="LodeRunner.png"/>
