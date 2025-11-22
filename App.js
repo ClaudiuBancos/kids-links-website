@@ -12,6 +12,10 @@ export default function App() {
 	return html`
 		<h1>Links for Luke and Nathan</h1>
 		<${Section}>
+			<${Link} title="Luke's IXL Assignment" url="https://www.ixl.com/science/grade-3/predict-heat-flow" image="homeschooling/heat-flow.png"/>
+			<${Link} title="Nathan's IXL Assignment" url="https://www.ixl.com/science/grade-2/compare-properties-of-materials" image="homeschooling/compare-properties.png"/>
+		<//>
+		<${Section}>
 			<${Link} title="Letter Sounds" url="https://phonicsandstuff.com/phonemes" image="LetterSounds.png"/>
 			<${Link} title="Kindergarten Math" url="https://www.ixl.com/math/kindergarten" image="KindergartenMath.png"/>
 			<${Link} title="Pre-K Language Arts" url="https://www.ixl.com/ela/pre-k" image="PreKLanguageArts.png"/>
@@ -33,7 +37,6 @@ export default function App() {
 			<${Link} title="Snake Game" url="https://sites.google.com/site/populardoodlegames/google-snake" image="SnakeGame.png"/>
 		<//>
 		<${Section}>
-			<${Link} title="Pre-K Math" url="https://www.ixl.com/math/pre-k" image="PreKMath.png"/>
 			<${Link} title="Custom Wordle" url="https://mywordle.strivemath.com//" image="CustomWordle.png"/>
 			<${Link} title="Wordle" url="https://www.nytimes.com/games/wordle/index.html" image="Wordle.png"/>
 			<${Link} title="Hello Wordl" url="https://hellowordl.net/" image="HelloWordl.png"/>
