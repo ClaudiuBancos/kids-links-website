@@ -12,8 +12,8 @@ export default function App() {
 	return html`
 		<h1>Links for Luke and Nathan</h1>
 		<${Section}>
-			<${Link} title="Luke's IXL Assignment" url="https://www.ixl.com/science/grade-3/predict-heat-flow" image="homeschooling/heat-flow.png"/>
-			<${Link} title="Nathan's IXL Assignment" url="https://www.ixl.com/science/grade-2/compare-properties-of-materials" image="homeschooling/compare-properties.png"/>
+			<${Link} title="Luke's IXL Assignment" url="https://www.ixl.com/science/grade-3/change-of-state-diagrams-solid-liquid-and-gas" image="homeschooling/change-of-state-diagrams.png"/>
+			<${Link} title="Nathan's IXL Assignment" url="https://www.ixl.com/science/grade-2/identify-materials-in-objects" image="homeschooling/identify-materials.png"/>
 		<//>
 		<${Section}>
 			<${Link} title="Letter Sounds" url="https://phonicsandstuff.com/phonemes" image="LetterSounds.png"/>
