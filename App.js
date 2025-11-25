@@ -14,6 +14,7 @@ export default function App() {
 		<${Section}>
 			<${Link} title="Luke's IXL Assignment" url="https://www.ixl.com/science/grade-3/predict-temperature-changes" image="homeschooling/predict-temperature-changes.png"/>
 			<${Link} title="Nathan's IXL Assignment" url="https://www.ixl.com/science/grade-2/identify-multiple-materials-in-objects" image="homeschooling/identify-multiple-materials.png"/>
+			<${Link} title="Typing" url="https://www.typing.com/student/lessons" image="homeschooling/typing.svg"/>
 		<//>
 		<${Section}>
 			<${Link} title="Letter Sounds" url="https://phonicsandstuff.com/phonemes" image="LetterSounds.png"/>
