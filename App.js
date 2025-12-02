@@ -12,9 +12,17 @@ export default function App() {
 	return html`
 		<h1>Links for Luke and Nathan</h1>
 		<${Section} noBorder>
-			<${Link} title="Luke's IXL Assignment" url="https://www.ixl.com/science/grade-3/identify-magnets-that-attract-or-repel" image="homeschooling/identify-magnets-that-attract-or-repel.png"/>
-			<${Link} title="Nathan's IXL Assignment" url="https://www.ixl.com/science/grade-2/identify-solids-liquids-and-gases" image="homeschooling/identify-solids-liquids-and-gasses.png"/>
-			<${Link} title="Typing" url="https://www.typing.com/student/lessons" image="homeschooling/typing.svg"/>
+			
+			<${Link} title="Luke's IXL Assignment" 
+				url="https://www.ixl.com/science/grade-3/read-animal-life-cycle-diagrams" 
+				image="homeschooling/read-animal-life-cycle-diagrams.png"/>
+			
+			<${Link} title="Nathan's IXL Assignment" 
+				url="https://www.ixl.com/science/grade-2/identify-mammals-birds-fish-reptiles-and-amphibians" 
+				image="homeschooling/identify-mammals-birds-fish-reptiles-and-amphibians.png" 
+				style="br-10"/>
+			
+				<${Link} title="Typing" url="https://www.typing.com/student/lessons" image="homeschooling/typing.svg"/>
 		<//>
 		<${Section}>
 			
@@ -22,6 +30,7 @@ export default function App() {
 			<${Link} title="Third Grade Science" url="https://www.ixl.com/science/grade-2/identify-solids-and-liquids" image="homeschooling/third-grade-science.png"/>
 		<//>
 		<${Section}>
+			<${Link} title="Neighborhood Good" url="https://ed.icivics.org/node/1814/resource" image="NeighborhoodGood.png"/>
 			<${Link} title="Letter Sounds" url="https://phonicsandstuff.com/phonemes" image="LetterSounds.png"/>
 			<${Link} title="Kindergarten Math" url="https://www.ixl.com/math/kindergarten" image="KindergartenMath.png"/>
 			<${Link} title="Pre-K Language Arts" url="https://www.ixl.com/ela/pre-k" image="PreKLanguageArts.png"/>
