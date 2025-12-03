@@ -18,8 +18,8 @@ export default function App() {
 				image="homeschooling/read-animal-life-cycle-diagrams.png"/>
 			
 			<${Link} title="Nathan's IXL Assignment" 
-				url="https://www.ixl.com/science/grade-2/identify-mammals-birds-fish-reptiles-and-amphibians" 
-				image="homeschooling/identify-mammals-birds-fish-reptiles-and-amphibians.png" 
+				url="https://www.ixl.com/science/grade-2/identify-animals-with-and-without-backbones" 
+				image="homeschooling/identify-animals-with-and-without-backbones.png" 
 				style="br-10"/>
 			
 				<${Link} title="Typing" url="https://www.typing.com/student/lessons" image="homeschooling/typing.svg"/>
