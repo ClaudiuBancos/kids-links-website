@@ -18,8 +18,8 @@ export default function App() {
 				image="homeschooling/classify-fruits-and-vegetables-as-plant-parts.png" style="br-10"/>
 			
 			<${Link} title="Nathan's IXL Assignment" 
-				url="https://www.ixl.com/science/grade-2/identify-animals-with-and-without-backbones" 
-				image="homeschooling/identify-animals-with-and-without-backbones.png" 
+				url="https://www.ixl.com/science/grade-2/body-parts-and-their-functions" 
+				image="homeschooling/body-parts-and-their-functions.png" 
 				style="br-10"/>
 			
 				<${Link} title="Typing" url="https://www.typing.com/student/lessons" image="homeschooling/typing.svg"/>
