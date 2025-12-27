@@ -14,12 +14,12 @@ export default function App() {
 		<${Section} noBorder>
 			
 			<${Link} title="Luke's IXL Assignment" 
-				url="https://www.ixl.com/science/grade-3/introduction-to-adaptations" 
-				image="homeschooling/introduction-to-adaptations.png" style="br-10"/>
+				url="https://www.ixl.com/science/grade-3/choose-units-of-time" 
+				image="homeschooling/choose-units-of-time.png" style="br-10"/>
 			
 			<${Link} title="Nathan's IXL Assignment" 
-				url="https://www.ixl.com/science/grade-2/observe-traits" 
-				image="homeschooling/observe-traits.png" 
+				url="https://www.ixl.com/science/grade-2/where-do-giraffes-and-beavers-live" 
+				image="homeschooling/where-do-giraffes-and-beavers-live.png" 
 				style="br-10"/>
 			
 				<${Link} title="Typing" url="https://www.typing.com/student/lessons" image="homeschooling/typing.svg"/>
