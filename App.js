@@ -14,12 +14,12 @@ export default function App() {
 		<${Section} noBorder>
 			
 			<${Link} title="Luke's IXL Assignment" 
-				url="https://www.ixl.com/science/grade-3/choose-units-of-time" 
-				image="homeschooling/choose-units-of-time.png" style="br-10"/>
+				url="https://www.ixl.com/social-studies/grade-3/identify-states-of-the-northeast" 
+				image="homeschooling/identify-states-of-the-northeast.png" style="br-10"/>
 			
 			<${Link} title="Nathan's IXL Assignment" 
-				url="https://www.ixl.com/science/grade-2/where-do-giraffes-and-beavers-live" 
-				image="homeschooling/where-do-giraffes-and-beavers-live.png" 
+				url="https://www.ixl.com/science/grade-2/pollinator-painted-lady-butterfly" 
+				image="homeschooling/pollinator-painted-lady-butterfly.png" 
 				style="br-10"/>
 			
 				<${Link} title="Typing" url="https://www.typing.com/student/lessons" image="homeschooling/typing.svg"/>
@@ -27,7 +27,7 @@ export default function App() {
 		<${Section}>
 			
 			<${Link} title="Second Grade Science" url="https://www.ixl.com/science/grade-2" image="homeschooling/second-grade-science.png"/>
-			<${Link} title="Third Grade Science" url="https://www.ixl.com/science/grade-2/identify-solids-and-liquids" image="homeschooling/third-grade-science.png"/>
+			<${Link} title="Fourth Grade Science" url="https://www.ixl.com/science/grade-4" image="homeschooling/fourth-grade-science.png"/>
 		<//>
 		<${Section}>
 			<${Link} title="Neighborhood Good" url="https://ed.icivics.org/node/1814/resource" image="NeighborhoodGood.png"/>
