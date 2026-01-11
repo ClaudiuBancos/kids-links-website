@@ -47,7 +47,6 @@ export default function App() {
 		<${Section}>
 			<${Link} title="Lode Runner Web Game" url="https://loderunnerwebgame.netlify.app/" image="LodeRunner.png"/>
 			<${Link} title="Cut The Rope" url="https://www.crazygames.com/game/cut-the-rope-ebx/" image="CutTheRope.png"/>
-			<${Link} title="Block Breaker" url="https://www.google.com/search?q=block+breaker&safe=active" image="BlockBreaker.png"/>
 			<${Link} title="Mario Teaches Typing" url="https://playclassic.games/games/educational-dos-games-online/play-mario-teaches-typing-online/play/" image="MarioTeachesTyping.png" style="br-10"/>
 			<${Link} title="Snake Game" url="https://sites.google.com/site/populardoodlegames/google-snake" image="SnakeGame.png"/>
 		<//>
