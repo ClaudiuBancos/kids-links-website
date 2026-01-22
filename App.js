@@ -14,8 +14,8 @@ export default function App() {
 		<${Section} noBorder>
 			
 			<${Link} title="Luke's IXL Assignment" 
-				url="https://www.ixl.com/social-studies/grade-3/harriet-tubman" 
-				image="homeschooling/harriet-tubman.png" style="br-10"/>
+				url="https://www.ixl.com/social-studies/grade-3/susan-b-anthony" 
+				image="homeschooling/susan-b-anthony.png" style="br-10"/>
 			
 			<${Link} title="Nathan's IXL Assignment" 
 				url="https://www.ixl.com/science/grade-2/changes-to-earths-surface-erosion" 
