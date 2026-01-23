@@ -13,9 +13,13 @@ export default function App() {
 		<h1>Links for Luke and Nathan</h1>
 		<${Section} noBorder>
 
-			<${Link} title="Daniel's IXL Assignment" 
-				url="https://www.ixl.com/math/pre-k/count-pictures-up-to-3" 
-				image="homeschooling/daniel-homeschooling-rainbow.png" style="br-10"/>
+			<${Link} title="Daniel's Letters" 
+				url="https://www.ixl.com/ela/pre-k/" 
+				image="homeschooling/letters-rainbow.png" style="br-10"/>
+
+			<${Link} title="Daniel's Numbers" 
+				url="https://www.ixl.com/math/pre-k/" 
+				image="homeschooling/numbers-rainbow.png" style="br-10"/>
 			
 			<${Link} title="Luke's IXL Assignment" 
 				url="https://www.ixl.com/social-studies/grade-3/sitting-bull" 
@@ -39,7 +43,6 @@ export default function App() {
 			<${Link} title="Neighborhood Good" url="https://ed.icivics.org/node/1814/resource" image="NeighborhoodGood.png"/>
 			<${Link} title="Letter Sounds" url="https://phonicsandstuff.com/phonemes" image="LetterSounds.png"/>
 			<${Link} title="Kindergarten Math" url="https://www.ixl.com/math/kindergarten" image="KindergartenMath.png"/>
-			<${Link} title="Pre-K Language Arts" url="https://www.ixl.com/ela/pre-k" image="PreKLanguageArts.png"/>
 			<${Link} title="TypeTastic!" url="https://typetastic.com/learn.html" image="TypeTastic.png" style="br-20"/>
 			<${Link} title="Internal Combustion Engine" url="https://ciechanow.ski/internal-combustion-engine/" image="InternalCombustionEngine.png"/>
 			<${Link} title="Chrome Music Lab" url="https://musiclab.chromeexperiments.com/" image="ChromeMusicLab.png"/>
