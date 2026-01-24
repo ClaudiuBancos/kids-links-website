@@ -22,8 +22,8 @@ export default function App() {
 				image="homeschooling/numbers-rainbow.png" style="br-10"/>
 			
 			<${Link} title="Luke's IXL Assignment" 
-				url="https://www.ixl.com/social-studies/grade-3/thomas-edison" 
-				image="homeschooling/thomas-edison.png" style="br-10"/>
+				url="https://www.ixl.com/social-studies/grade-3/theodore-roosevelt" 
+				image="homeschooling/theodore-roosevelt.png" style="br-10"/>
 			
 			<${Link} title="Nathan's IXL Assignment" 
 				url="https://www.ixl.com/science/grade-2/changes-to-earths-surface-erosion" 
