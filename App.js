@@ -22,19 +22,19 @@ export default function App() {
 				image="homeschooling/numbers-rainbow.png" style="br-10"/>
 			
 			<${Link} title="Luke's IXL Assignment" 
-				url="https://www.ixl.com/social-studies/grade-3/theodore-roosevelt" 
-				image="homeschooling/theodore-roosevelt.png" style="br-10"/>
+				url="https://www.ixl.com/social-studies/grade-3/george-washington-carver" 
+				image="homeschooling/george-washington-carver.png" style="br-10"/>
 			
 			<${Link} title="Nathan's IXL Assignment" 
-				url="https://www.ixl.com/science/grade-2/changes-to-earths-surface-erosion" 
-				image="homeschooling/changes-to-earths-surface-erosion.png" 
+				url="https://www.ixl.com/social-studies/grade-1/identify-earths-land-features" 
+				image="homeschooling/identify-earths-land-features.png" 
 				style="br-10"/>
 			
 				<${Link} title="Typing" url="https://www.typing.com/student/lessons" image="homeschooling/typing.svg"/>
 		<//>
 		<${Section}>
 			
-			<${Link} title="Second Grade Science" url="https://www.ixl.com/science/grade-2" image="homeschooling/second-grade-science.png"/>
+			<${Link} title="Third Grade Science" url="https://www.ixl.com/science/grade-3" image="homeschooling/third-grade-science.png"/>
 			<${Link} title="Fourth Grade Science" url="https://www.ixl.com/science/grade-4" image="homeschooling/fourth-grade-science.png"/>
 		<//>
 		<${Section}>
