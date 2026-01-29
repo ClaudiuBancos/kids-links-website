@@ -22,12 +22,12 @@ export default function App() {
 				image="homeschooling/numbers-rainbow.png" style="br-10"/>
 			
 			<${Link} title="Luke's IXL Assignment" 
-				url="https://www.ixl.com/social-studies/grade-3/george-washington-carver" 
-				image="homeschooling/george-washington-carver.png" style="br-10"/>
+				url="https://www.ixl.com/social-studies/grade-3/thurgood-marshall" 
+				image="homeschooling/thurgood-marshall.png" style="br-10"/>
 			
 			<${Link} title="Nathan's IXL Assignment" 
-				url="https://www.ixl.com/social-studies/grade-1/identify-earths-land-features" 
-				image="homeschooling/identify-earths-land-features.png" 
+				url="https://www.ixl.com/social-studies/grade-1/identify-american-symbols" 
+				image="homeschooling/identify-american-symbols.png" 
 				style="br-10"/>
 			
 				<${Link} title="Typing" url="https://www.typing.com/student/lessons" image="homeschooling/typing.svg"/>
