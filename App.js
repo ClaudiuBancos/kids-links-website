@@ -12,14 +12,6 @@ export default function App() {
 	return html`
 		<h1>Links for Luke and Nathan</h1>
 		<${Section} noBorder>
-
-			<${Link} title="Daniel's Letters" 
-				url="https://www.ixl.com/ela/pre-k/" 
-				image="homeschooling/letters-rainbow.png" style="br-10"/>
-
-			<${Link} title="Daniel's Numbers" 
-				url="https://www.ixl.com/math/pre-k/" 
-				image="homeschooling/numbers-rainbow.png" style="br-10"/>
 			
 			<${Link} title="Luke's IXL Assignment" 
 				url="https://www.ixl.com/social-studies/grade-3/the-empire-state-building" 
