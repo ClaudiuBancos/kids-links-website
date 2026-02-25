@@ -26,9 +26,10 @@ export default function App() {
 				<${Link} title="Typing" url="https://www.typing.com/student/lessons" image="homeschooling/typing.svg"/>
 		<//>
 		<${Section}>
-			
 			<${Link} title="Third Grade Science" url="https://www.ixl.com/science/grade-3" image="homeschooling/third-grade-science.png"/>
 			<${Link} title="Fourth Grade Science" url="https://www.ixl.com/science/grade-4" image="homeschooling/fourth-grade-science.png"/>
+
+			<${Link} title="Google Drive" url="https://drive.google.com/" image="homeschooling/google_drive.png"/>
 		<//>
 		<${Section}>
 			<${Link} title="Teach Your Monster to Read" url="https://www.teachyourmonster.org/u/21640347" image="monster.png"/>
