@@ -19,8 +19,8 @@ export default function App() {
 				style="br-10"/>
 			
 			<${Link} title="Nathan's IXL Assignment" 
-				url="https://www.ixl.com/social-studies/grade-1/jobs-community-helpers-do" 
-				image="homeschooling/jobs-community-helpers-do.png" 
+				url="https://www.ixl.com/social-studies/grade-1/compare-cities-and-rural-areas" 
+				image="homeschooling/compare-cities-and-rural-areas.png" 
 				style="br-10"/>
 			
 				<${Link} title="Typing" url="https://www.typing.com/student/lessons" image="homeschooling/typing.svg"/>
