@@ -31,6 +31,12 @@ export default function App() {
 
 			<${Link} title="Google Drive" url="https://drive.google.com/" image="homeschooling/google_drive.png"/>
 		<//>
+
+		<${Section}>
+			<${Link} title="Lichess" url="https://lichess.org/" image="Lichess.png"/>
+			<${Link} title="Google Maps" url="https://maps.google.com/" image="GoogleMaps.png" style="br-20"/>
+		<//>
+		
 		<${Section}>
 			<${Link} title="Teach Your Monster to Read" url="https://www.teachyourmonster.org/u/21640347" image="monster.png"/>
 			<${Link} title="Money Drag" url="https://teacher.gynzy.com/en-us/board?content=745" image="homeschooling/money-drag.png"/>
@@ -48,7 +54,6 @@ export default function App() {
 			<${Link} title="EdShed Letter Tiles" url="https://www.edshed.com/en-us/lettertiles" image="LetterTiles.png"/>
 		<//>
 		<${Section}>
-			<${Link} title="Lichess" url="https://lichess.org/" image="Lichess.png"/>
 			<${Link} title="Lode Runner Web Game" url="https://loderunnerwebgame.netlify.app/" image="LodeRunner.png"/>
 			<${Link} title="Cut The Rope" url="https://www.crazygames.com/game/cut-the-rope-ebx/" image="CutTheRope.png"/>
 			<${Link} title="Mario Teaches Typing" url="https://playclassic.games/games/educational-dos-games-online/play-mario-teaches-typing-online/play/" image="MarioTeachesTyping.png" style="br-10"/>
