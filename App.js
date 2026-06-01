@@ -32,9 +32,11 @@ export default function App() {
 			<${Link} title="Google Drive" url="https://drive.google.com/" image="homeschooling/google_drive.png"/>
 		<//>
 
+
 		<${Section}>
 			<${Link} title="Lichess" url="https://lichess.org/" image="Lichess.png"/>
 			<${Link} title="Google Maps" url="https://maps.google.com/" image="GoogleMaps.png" style="br-20"/>
+			<${Link} title="Minecraft Library Books" url="https://docs.google.com/spreadsheets/d/1S8DT6gFK6Se2LPJyFh8o9837mNv8ZXBWYFEJUblUcZU/edit" image="MinecraftBooks.png"/>
 		<//>
 		
 		<${Section}>
