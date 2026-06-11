@@ -24,6 +24,9 @@ export default function App() {
 				style="br-10"/>
 			
 				<${Link} title="Typing" url="https://www.typing.com/student/lessons" image="homeschooling/typing.svg"/>
+
+				<${Link} title="Luke Daily Writing" url="https://daily-bancos.vercel.app/write/luke-bfbcdfbccbb84227" image="LukeTypingBulbasaur.png" style="br-20"/>
+				<${Link} title="Nathan Daily Writing" url="https://daily-bancos.vercel.app/write/nathan-c0a33f68a26041a5" image="NathanTypingMudkip.png" style="br-20"/>
 		<//>
 		<${Section}>
 			<${Link} title="Third Grade Science" url="https://www.ixl.com/science/grade-3" image="homeschooling/third-grade-science.png"/>
