@@ -11,8 +11,8 @@ const html = htm.bind(h);
 export default function App() {
 	return html`
 		<h1>Links for Luke and Nathan</h1>
+		
 		<${Section} noBorder>
-			
 			<${Link} title="Luke's IXL Assignment" 
 				url="https://www.ixl.com/social-studies/grade-4/the-american-revolution-the-rebellion-begins" 
 				image="homeschooling/the-american-revolution-the-rebellion-begins.png" 
@@ -28,13 +28,13 @@ export default function App() {
 				<${Link} title="Luke Daily Writing" url="https://daily-bancos.vercel.app/write/luke-bfbcdfbccbb84227" image="LukeTypingBulbasaur.png" style="br-20"/>
 				<${Link} title="Nathan Daily Writing" url="https://daily-bancos.vercel.app/write/nathan-c0a33f68a26041a5" image="NathanTypingMudkip.png" style="br-20"/>
 		<//>
+
 		<${Section}>
 			<${Link} title="Third Grade Science" url="https://www.ixl.com/science/grade-3" image="homeschooling/third-grade-science.png"/>
 			<${Link} title="Fourth Grade Science" url="https://www.ixl.com/science/grade-4" image="homeschooling/fourth-grade-science.png"/>
 
 			<${Link} title="Google Drive" url="https://drive.google.com/" image="homeschooling/google_drive.png"/>
 		<//>
-
 
 		<${Section}>
 			<${Link} title="Lichess" url="https://lichess.org/" image="Lichess.png"/>
@@ -60,6 +60,7 @@ export default function App() {
 			<${Link} title="Morpheme Mix" url="https://phonicsandstuff.com/puzzles/morpheme-mix/" image="MorphemeMix.png"/>
 			<${Link} title="EdShed Letter Tiles" url="https://www.edshed.com/en-us/lettertiles" image="LetterTiles.png"/>
 		<//>
+
 		<${Section}>
 			<${Link} title="Minecraft Classic" url="https://classic.minecraft.net/" image="MinecraftClassic.jfif"/>
 			<${Link} title="Lode Runner Web Game" url="https://loderunnerwebgame.netlify.app/" image="LodeRunner.png"/>
@@ -67,6 +68,7 @@ export default function App() {
 			<${Link} title="Mario Teaches Typing" url="https://playclassic.games/games/educational-dos-games-online/play-mario-teaches-typing-online/play/" image="MarioTeachesTyping.png" style="br-10"/>
 			<${Link} title="Snake Game" url="https://googlesnakemods.com/v/current/" image="SnakeGame.png"/>
 		<//>
+
 		<${Section}>
 			<${Link} title="Custom Wordle" url="https://mywordle.strivemath.com//" image="CustomWordle.png"/>
 			<${Link} title="Wordle" url="https://www.nytimes.com/games/wordle/index.html" image="Wordle.png"/>
@@ -74,6 +76,7 @@ export default function App() {
 			<${Link} title="Nonograms" url="https://www.goobix.com/games/nonograms/" image="Nonograms.png"/>
 			<${Link} title="Google Chat" url="https://mail.google.com/" image="GoogleChat.png"/>
 		<//>
+
 		<${Section}>
 			<${Link} title="One Hundred Snowballs" url="https://www.ixl.com/games/one_hundred_snowballs" image="OneHundredSnowballs.png" style="br-10"/>
 			<${Link} title="Birthday Candle Counting" url="https://www.ixl.com/games/birthday-candle-counting" image="BirthdayCandleCounting.png" style="br-10"/>
@@ -88,6 +91,7 @@ export default function App() {
 			<${Link} title="Number Bingo: 0 to 20" url="https://www.ixl.com/games/number-bingo-20-a" image="NumberBingo0To20.png" style="br-5"/>
 			<${Link} title="Math Man: Addition" url="https://www.ixl.com/games/math-man-addition-a" image="MathManAddition.jpg" style="br-5"/>
 		<//>
+		
 		<${Section} noBorder>
 			<${Link} title="Sight Word Bingo" url="https://www.ixl.com/games/sight-word-bingo-pre-primer-a" image="SightWordBingo.png" style="br-5"/>
 			<${Link} title="Alphabet Bingo: Uppercase Letters" url="https://www.ixl.com/games/alphabet-bingo-names-uppercase-a" image="AlphabetBingoUppercaseLetters.png" style="br-5"/>
