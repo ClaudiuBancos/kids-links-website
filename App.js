@@ -42,6 +42,7 @@ export default function App() {
 			<${Link} title="Chess.com" url="https://www.chess.com/" image="chessDotCom.png" style="br-20"/>
 			<${Link} title="Google Maps" url="https://maps.google.com/" image="GoogleMaps.png" style="br-20"/>
 			<${Link} title="Minecraft Library Books" url="https://docs.google.com/spreadsheets/d/1S8DT6gFK6Se2LPJyFh8o9837mNv8ZXBWYFEJUblUcZU/edit" image="MinecraftBooks.png"/>
+			<${Link} title="Wordville" url="https://wordville.com/" image="Wordville.png" style="br-20"/>
 		<//>
 		
 		<${Section}>
