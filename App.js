@@ -57,7 +57,7 @@ export default function App() {
 			<${Link} title="Chrome Music Lab" url="https://musiclab.chromeexperiments.com/" image="ChromeMusicLab.png"/>
 			<${Link} title="Google Earth" url="https://earth.google.com/" image="GoogleEarth.png" style="br-20"/>
 			<${Link} title="Regular Tixy" url="https://www.mathsuniverse.com/tixy/" image="tixy.png" style="br-20"/>
-			<${Link} title="Nathan's Tixy" url="tixy.html" image="nathan_tixy.png" style="br-20"/>
+            <${Link} title="Nathan's Tixy" url="https://celestebancos.github.io/tixy-quest/" image="nathan_tixy.png" style="br-20"/>
 			<${Link} title="MolView" url="https://app.molview.com/" image="MolView.png"/>
 			<${Link} title="Morpheme Mix" url="https://phonicsandstuff.com/puzzles/morpheme-mix/" image="MorphemeMix.png"/>
 			<${Link} title="EdShed Letter Tiles" url="https://www.edshed.com/en-us/lettertiles" image="LetterTiles.png"/>
