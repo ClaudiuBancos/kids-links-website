@@ -66,6 +66,7 @@ export default function App() {
 		<${Section}>
 			<${Link} title="Minecraft Classic" url="https://classic.minecraft.net/" image="MinecraftClassic.jfif"/>
 			<${Link} title="Lode Runner Web Game" url="https://loderunnerwebgame.netlify.app/" image="LodeRunner.png"/>
+			<${Link} title="Pokemon Uno" url="https://pokemon-uno.netlify.app/" image="PokemonUno.webp" style="br-20"/>
 			<${Link} title="Cut The Rope" url="https://www.crazygames.com/game/cut-the-rope-ebx/" image="CutTheRope.png"/>
 			<${Link} title="Mario Teaches Typing" url="https://playclassic.games/games/educational-dos-games-online/play-mario-teaches-typing-online/play/" image="MarioTeachesTyping.png" style="br-10"/>
 			<${Link} title="Snake Game" url="https://googlesnakemods.com/v/current/" image="SnakeGame.png"/>
