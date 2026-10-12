@@ -42,6 +42,7 @@ export default function App() {
 			<${Link} title="Chess.com" url="https://www.chess.com/" image="chessDotCom.png" style="br-20"/>
 			<${Link} title="Google Maps" url="https://maps.google.com/" image="GoogleMaps.png" style="br-20"/>
 			<${Link} title="Grammar Tools" url="https://jwed.co.uk/tools/" image="GrammarTools.png"/>
+			<${Link} title="Frozen Assets" url="https://celestebancos.github.io/frozen-assets/" image="FrozenAssets.png"/>
 		<//>
 		
 		<${Section}>
