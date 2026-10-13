@@ -37,12 +37,21 @@ export default function App() {
 		<//>
 
 		<${Section}>
+			<${Link} title="Super Pokemon World" url="https://super-pokemon-world.netlify.app/" image="SuperPokemonWorld.png" style="br-20"/>
+			<${Link} title="Pokemon TCG Retro" url="https://pokemon-tcg-retro.netlify.app/" image="PokemonTCGRetro.webp" style="br-20"/>
+			<${Link} title="Pokemon Uno" url="https://pokemon-uno.netlify.app/" image="PokemonUno.webp" style="br-20"/>
+			<${Link} title="Frozen Assets" url="https://celestebancos.github.io/frozen-assets/" image="FrozenAssets.png"/>
+			<${Link} title="Nathan's Tixy" url="https://celestebancos.github.io/tixy-quest/" image="nathan_tixy.png" style="br-20"/>
+			<${Link} title="Lode Runner Web Game" url="https://loderunnerwebgame.netlify.app/" image="LodeRunner.png"/>
+		<//>
+
+		<${Section}>
 			<${Link} title="Lichess" url="https://lichess.org/" image="Lichess.png"/>
 			<${Link} title="ChessKid" url="https://www.chesskid.com/" image="ChessKid.png" style="br-20"/>
 			<${Link} title="Chess.com" url="https://www.chess.com/" image="chessDotCom.png" style="br-20"/>
 			<${Link} title="Google Maps" url="https://maps.google.com/" image="GoogleMaps.png" style="br-20"/>
 			<${Link} title="Grammar Tools" url="https://jwed.co.uk/tools/" image="GrammarTools.png"/>
-			<${Link} title="Frozen Assets" url="https://celestebancos.github.io/frozen-assets/" image="FrozenAssets.png"/>
+			
 		<//>
 		
 		<${Section}>
@@ -58,18 +67,13 @@ export default function App() {
 			<${Link} title="Chrome Music Lab" url="https://musiclab.chromeexperiments.com/" image="ChromeMusicLab.png"/>
 			<${Link} title="Google Earth" url="https://earth.google.com/" image="GoogleEarth.png" style="br-20"/>
 			<${Link} title="Regular Tixy" url="https://www.mathsuniverse.com/tixy/" image="tixy.png" style="br-20"/>
-            <${Link} title="Nathan's Tixy" url="https://celestebancos.github.io/tixy-quest/" image="nathan_tixy.png" style="br-20"/>
 			<${Link} title="MolView" url="https://app.molview.com/" image="MolView.png"/>
 			<${Link} title="Morpheme Mix" url="https://phonicsandstuff.com/puzzles/morpheme-mix/" image="MorphemeMix.png"/>
 			<${Link} title="EdShed Letter Tiles" url="https://www.edshed.com/en-us/lettertiles" image="LetterTiles.png"/>
 		<//>
 
 		<${Section}>
-			<${Link} title="Super Pokemon World" url="https://super-pokemon-world.netlify.app/" image="SuperPokemonWorld.png" style="br-20"/>
-			<${Link} title="Pokemon TCG Retro" url="https://pokemon-tcg-retro.netlify.app/" image="PokemonTCGRetro.webp" style="br-20"/>
-			<${Link} title="Pokemon Uno" url="https://pokemon-uno.netlify.app/" image="PokemonUno.webp" style="br-20"/>
 			<${Link} title="Minecraft Classic" url="https://classic.minecraft.net/" image="MinecraftClassic.jfif"/>
-			<${Link} title="Lode Runner Web Game" url="https://loderunnerwebgame.netlify.app/" image="LodeRunner.png"/>
 			<${Link} title="Cut The Rope" url="https://www.crazygames.com/game/cut-the-rope-ebx/" image="CutTheRope.png"/>
 			<${Link} title="Mario Teaches Typing" url="https://playclassic.games/games/educational-dos-games-online/play-mario-teaches-typing-online/play/" image="MarioTeachesTyping.png" style="br-10"/>
 			<${Link} title="Snake Game" url="https://googlesnakemods.com/v/current/" image="SnakeGame.png"/>
