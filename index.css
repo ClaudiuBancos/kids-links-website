@@ -31,11 +31,12 @@ img {
 .br-5 {
 	border-radius: 5px;
 }
+
 .section-title {
 	list-style: none;
 	cursor: pointer;
 	user-select: none;
-	text-align: center;
+	text-align: left;
 	font-size: 32px;
 	font-weight: bold;
 	margin: 10px 0;
