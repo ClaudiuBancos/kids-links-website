@@ -31,3 +31,28 @@ img {
 .br-5 {
 	border-radius: 5px;
 }
+.section-title {
+	list-style: none;
+	cursor: pointer;
+	user-select: none;
+	text-align: center;
+	font-size: 32px;
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+.section-title::-webkit-details-marker {
+	display: none;
+}
+
+.section-title::before {
+	content: "\25B6";
+	display: inline-block;
+	margin-right: 12px;
+	font-size: 0.7em;
+	transition: transform 0.15s;
+}
+
+.section[open] > .section-title::before {
+	transform: rotate(90deg);
+}

@@ -7,6 +7,8 @@ const html = htm.bind(h);
 
 // <${Link} title="" url="" image=".png"/>
 // <${Link} title="" url="" image=".png" style=""/>
+// <${Section} title="Games">  (a titled section can be collapsed by clicking its title)
+// <${Section} title="Games" collapsed>  (starts collapsed until clicked open)
 
 export default function App() {
 	return html`
@@ -87,7 +89,7 @@ export default function App() {
 			<${Link} title="Google Chat" url="https://mail.google.com/" image="GoogleChat.png"/>
 		<//>
 
-		<${Section}>
+		<${Section} title="IXL Math Games" >
 			<${Link} title="One Hundred Snowballs" url="https://www.ixl.com/games/one_hundred_snowballs" image="OneHundredSnowballs.png" style="br-10"/>
 			<${Link} title="Birthday Candle Counting" url="https://www.ixl.com/games/birthday-candle-counting" image="BirthdayCandleCounting.png" style="br-10"/>
 			<${Link} title="Count Snakes" url="https://www.ixl.com/games/base-ten-fun-count-write-ones-a" image="CountSnakes.png" style="br-10"/>
@@ -102,7 +104,7 @@ export default function App() {
 			<${Link} title="Math Man: Addition" url="https://www.ixl.com/games/math-man-addition-a" image="MathManAddition.jpg" style="br-5"/>
 		<//>
 		
-		<${Section} noBorder>
+		<${Section} title="IXL English Games" noBorder>
 			<${Link} title="Sight Word Bingo" url="https://www.ixl.com/games/sight-word-bingo-pre-primer-a" image="SightWordBingo.png" style="br-5"/>
 			<${Link} title="Alphabet Bingo: Uppercase Letters" url="https://www.ixl.com/games/alphabet-bingo-names-uppercase-a" image="AlphabetBingoUppercaseLetters.png" style="br-5"/>
 		<//>
