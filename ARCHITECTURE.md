@@ -6,6 +6,6 @@ A static, build-free page of picture links for the kids. Preact + htm are loaded
 - `index.css` — All styling: link grid, image sizes, border-radius helpers (`br-5/10/20`), collapsible section titles.
 - `App.js` — The content: a list of `Section`s, each holding `Link`s. Edit this to add or move links.
 - `components/Section.js` — A row of links followed by a divider (`noBorder` hides it). Giving it a `title` makes it collapsible (native `<details>`); `collapsed` makes it start closed. Open/closed state is remembered per title in `localStorage`.
-- `components/Link.js` — One titled image link (`title`, `url`, `image` under `images/`, optional `style` class). Also exports an unused `Border`.
+- `components/Link.js` — One titled image link (`title`, `url`, `image` under `images/`, optional `style` class). Images load lazily.
 - `images/` — Thumbnails for the links.
-- `tixy.html` — Standalone "Nathan's Tixy Tutorial" page (self-contained, not part of the Preact app).
+- `images/archive/` — Thumbnails no link currently uses (mostly old IXL assignments), kept for swapping back in. Not loaded by the page.

@@ -7,16 +7,10 @@ function Link({ title, url, image, style }) {
 		<div class="link-div">
 			<a href=${url}>
 				<p>${title}</p>
-				<img src="images/${image}" alt="${title}" class="${style}" />
+				<img src="images/${image}" alt="${title}" class="${style}" loading="lazy" />
 			</a>
 		</div>
 	`;
 }
 
-function Border() {
-	return html`
-		<hr style="width: 100%; border: 1px solid #ccc;"/>
-	`
-}
-
-export { Link, Border };
+export { Link };
