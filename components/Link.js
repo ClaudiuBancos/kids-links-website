@@ -7,7 +7,7 @@ function Link({ title, url, image, style }) {
 		<div class="link-div">
 			<a href=${url}>
 				<p>${title}</p>
-				<img src="images/${image}" alt="${title}" class="${style}" loading="lazy" />
+				<img src="images/${image}" alt="${title}" class="${style}" />
 			</a>
 		</div>
 	`;

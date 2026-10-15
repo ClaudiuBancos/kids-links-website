@@ -8,11 +8,12 @@ ARCHITECTURE.md maps the code; this file just tracks the work.
 - [ ] An easier way to swap the weekly IXL assignment links at the top
 - [ ] Keep the links as data (a list of sections and links) instead of hand-written markup in App.js, so adding one is a single line
 
+## Maybe Someday
+
 ## Done
-- [x] Moved the 69 images no link uses into `images/archive/` (same subfolders), as a stash for swapping assignments back in
+- [x] Moved the 69 images no link uses into an `archive/` subfolder next to where they were (`images/archive/`, `images/homeschooling/archive/`), as a stash for swapping assignments back in
 - [x] Deleted `tixy.html` (nothing linked to it; "Nathan's Tixy" points at tixy-quest on GitHub Pages)
 - [x] Removed the unused `Border` export from `components/Link.js`
-- [x] Thumbnails use `loading="lazy"`, so images below the fold wait until scrolled to (Chrome still fetches images inside collapsed sections)
 - [x] Renamed the 30 linked images whose files were `.PNG` to `.png`, so they match App.js on case-sensitive hosts
 - [x] Preact and htm load once, from esm.sh at pinned versions, via an import map in `index.html` (hooks now usable)
 - [x] Moved the `index.html` `<script>` inside `<body>`
