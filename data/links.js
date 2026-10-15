@@ -140,11 +140,11 @@ export const sections = {
 const everybody = ["family-games", "tools", "chess", "typing", "misc-learning", "learning-games", "entertaining-games", "math", "reading", "ixl-math-games", "ixl-english-games"];
 
 // `slug` is the address (/luke); "home" is the page at / for when nobody is signed in.
-// `owner` is the account's display name; the owner of an `admin` page can see and edit every page.
+// `name` labels it in the admin's list of pages; `owner` is the account's display name; the owner of an `admin` page can see and edit every page.
 export const pages = [
-	{ slug: "home", title: "Bancos Kids' Links", owner: null, sections: ["science", ...everybody] },
-	{ slug: "luke", title: "Luke's Links", owner: "Luke", sections: ["luke-top", "science", ...everybody] },
-	{ slug: "nathan", title: "Nathan's Links", owner: "Nathan", sections: ["nathan-top", ...everybody] },
-	{ slug: "daniel", title: "Daniel's Links", owner: "Daniel", sections: everybody },
-	{ slug: "claudiu", title: "Claudiu's Links", owner: "Claudiu", admin: true, sections: ["tools"] },
+	{ slug: "home", name: "Home", title: "Bancos Kids' Links", owner: null, sections: ["science", ...everybody] },
+	{ slug: "luke", name: "Luke", title: "Luke's Links", owner: "Luke", sections: ["luke-top", "science", ...everybody] },
+	{ slug: "nathan", name: "Nathan", title: "Nathan's Links", owner: "Nathan", sections: ["nathan-top", ...everybody] },
+	{ slug: "daniel", name: "Daniel", title: "Daniel's Links", owner: "Daniel", sections: everybody },
+	{ slug: "claudiu", name: "Claudiu", title: "Claudiu's Links", owner: "Claudiu", admin: true, sections: ["tools"] },
 ];

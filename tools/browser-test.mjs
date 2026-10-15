@@ -62,7 +62,17 @@ async function brokenImages() {
 }
 
 try {
-	// Signed out
+	// The real database, signed out: only reads, before this tab is switched to test mode
+	await open("/");
+	await waitFor(`document.querySelectorAll(".link-div").length > 0`);
+	const liveLinks = await linkTitles();
+	check("live: home loads its links from Supabase", liveLinks.length > 40, String(liveLinks.length));
+	check("live: signed out gets no personal links", !liveLinks.some((t) => /Daily Bancos|IXL Assignment/.test(t)));
+	check("live: not in test mode", !(await page.evaluate(`!!document.querySelector(".test-badge")`)));
+	await open("/luke");
+	check("live: Luke's page asks you to log in", await dialogOpen());
+
+	// Test mode from here on. Signed out
 	await open("/?test");
 	check("home page shows", (await heading()) === "Bancos Kids' Links", await heading());
 	check("home has a Log in button", await page.evaluate(`[...document.querySelectorAll("button")].some((b) => b.textContent === "Log in")`));

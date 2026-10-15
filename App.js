@@ -78,7 +78,7 @@ export default function App() {
 				${mine?.admin &&
 				pages.map(
 					(p) => html`<${NavLink} key=${p.slug} href=${p.slug === "home" ? "/" : `/${p.slug}`}
-						class=${p.slug === shown.slug ? "current" : ""}>${p.slug === "home" ? "Home" : p.owner ?? p.title}<//>`,
+						class=${p.slug === shown.slug ? "current" : ""}>${p.name}<//>`,
 				)}
 			</nav>
 			<div class="account">
