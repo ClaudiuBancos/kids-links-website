@@ -5,17 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links for Luke and Nathan</title>
     <link rel="stylesheet" href="index.css">
+    <!-- One pinned copy of Preact and htm, shared by every module via bare imports -->
+    <script type="importmap">
+    {
+        "imports": {
+            "preact": "https://esm.sh/preact@10.24.3",
+            "htm": "https://esm.sh/htm@3.1.1"
+        }
+    }
+    </script>
 </head>
 <body>
 <div id="app"></div>
-</body>
-</html>
 
 <script type="module">
-    import { h, render } from 'https://unpkg.com/preact?module';
-    import htm from 'https://unpkg.com/htm?module';
+    import { h, render } from 'preact';
+    import htm from 'htm';
     import App from './App.js';
 
     const html = htm.bind(h);
     render(html`<${App} />`, document.getElementById('app'));
 </script>
+</body>
+</html>

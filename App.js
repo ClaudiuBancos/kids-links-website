@@ -1,5 +1,5 @@
-import { h } from "https://unpkg.com/preact?module";
-import htm from "https://unpkg.com/htm?module";
+import { h } from "preact";
+import htm from "htm";
 import { Link } from "./components/Link.js";
 import Section from "./components/Section.js";
 
@@ -74,7 +74,7 @@ export default function App() {
 		<//>
 		
 		<${Section} title="Learning Games" >
-			<${Link} title="Custom Wordle" url="https://mywordle.strivemath.com//" image="CustomWordle.png"/>
+			<${Link} title="Custom Wordle" url="https://mywordle.strivemath.com/" image="CustomWordle.png"/>
 			<${Link} title="Wordle" url="https://www.nytimes.com/games/wordle/index.html" image="Wordle.png"/>
 			<${Link} title="Hello Wordl" url="https://hellowordl.net/" image="HelloWordl.png"/>
 			<${Link} title="Nonograms" url="https://www.goobix.com/games/nonograms/" image="Nonograms.png"/>

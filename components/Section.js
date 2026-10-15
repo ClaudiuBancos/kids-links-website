@@ -1,9 +1,8 @@
-import { h } from "https://esm.sh/preact";
-import htm from "https://esm.sh/htm";
+import { h } from "preact";
+import htm from "htm";
 const html = htm.bind(h);
 
-// Sections with a title are collapsible. Uses a native <details> element (no hooks,
-// since App.js and the components load Preact from different CDNs) and remembers
+// Sections with a title are collapsible. Uses a native <details> element and remembers
 // each section's open/closed state in localStorage, keyed by its title.
 const storageKey = (title) => `section-open:${title}`;
 

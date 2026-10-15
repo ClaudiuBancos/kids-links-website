@@ -1,6 +1,6 @@
 # Architecture
 
-A static, build-free page of picture links for the kids. Preact + htm are loaded as ES modules from CDNs, so the site runs straight from any static file server (e.g. VS Code Live Server).
+A static, build-free page of picture links for the kids. Preact + htm are loaded as ES modules from esm.sh (pinned versions, mapped to the bare names `preact` and `htm` by an import map in `index.html`), so the site runs straight from any static file server (e.g. VS Code Live Server).
 
 - `index.html` — Page shell; renders `App` into `#app`.
 - `index.css` — All styling: link grid, image sizes, border-radius helpers (`br-5/10/20`), collapsible section titles.
