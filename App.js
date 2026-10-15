@@ -10,7 +10,7 @@ import { listPages, ownsPage } from "./store.js";
 const html = htm.bind(h);
 
 // The shell: picks the page from the address, sends people where they're allowed to be, and draws
-// the bar at the top (Log in / Sign out, plus every page for the admin).
+// the bar at the top (Log in / Sign out; for the admin, every page and the Edit switch).
 //   /         the home page, for when nobody is signed in. A signed-in kid is sent to their own page.
 //   /luke     Luke's page: only for Luke, and for the admin (Claudiu). Signed out, it asks you to log in.
 // The links themselves live in the store (store.js); App.js only decides which page to show.
@@ -18,10 +18,11 @@ const html = htm.bind(h);
 function usePages() {
 	const [pages, setPages] = useState(undefined);
 	const [error, setError] = useState(null);
+	const refresh = () => listPages().then(setPages, (e) => setError(e.message ?? String(e)));
 	useEffect(() => {
-		listPages().then(setPages, (e) => setError(e.message ?? String(e)));
+		refresh();
 	}, []);
-	return { pages, error };
+	return { pages, error, refresh };
 }
 
 // Where this person should be instead, or null if they may stay.
@@ -36,8 +37,9 @@ function redirectFor(slug, page, user, mine) {
 export default function App() {
 	const path = usePath();
 	const user = useUser();
-	const { pages, error } = usePages();
+	const { pages, error, refresh } = usePages();
 	const [signingIn, setSigningIn] = useState(false);
+	const [editing, setEditing] = useState(false);
 
 	const slug = decodeURIComponent(path.split("/")[1] ?? "").toLowerCase() || "home";
 	const page = pages?.find((p) => p.slug === slug);
@@ -68,6 +70,7 @@ export default function App() {
 	};
 
 	const leave = async () => {
+		setEditing(false);
 		await signOut();
 		navigate("/");
 	};
@@ -83,6 +86,8 @@ export default function App() {
 			</nav>
 			<div class="account">
 				${testMode && html`<span class="test-badge">Test mode</span>`}
+				${mine?.admin &&
+				html`<button class=${editing ? "primary" : ""} onClick=${() => setEditing(!editing)}>${editing ? "Done editing" : "✎ Edit"}</button>`}
 				${user
 					? html`<span class="user-name">${user.name}</span> <button onClick=${leave}>Sign out</button>`
 					: html`<button class="primary" onClick=${() => setSigningIn(true)}>Log in</button>`}
@@ -90,7 +95,8 @@ export default function App() {
 		</header>
 
 		<h1>${shown.title}</h1>
-		<${Page} key=${`${shown.slug}:${user?.id ?? ""}`} slug=${shown.slug} />
+		<${Page} key=${`${shown.slug}:${user?.id ?? ""}`} page=${shown} pages=${pages}
+			editing=${editing && !!mine?.admin} onPagesChanged=${refresh} />
 
 		${(signingIn || mustSignIn) &&
 		html`<${SignInDialog}

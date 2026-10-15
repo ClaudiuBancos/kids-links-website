@@ -219,3 +219,136 @@ img {
 .section[open] > .section-title::before {
 	transform: rotate(90deg);
 }
+
+/* The admin's edit mode */
+button.danger {
+	color: #b42318;
+}
+
+.edit-bar {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 12px 0 4px;
+	padding: 8px 12px;
+	border: 2px dashed #9db5ef;
+	border-radius: 10px;
+	background: #f3f6fe;
+	font-family: system-ui, sans-serif;
+}
+
+.edit-bar button {
+	padding: 4px 10px;
+	font-size: 15px;
+}
+
+.edit-bar .section-name {
+	font-weight: bold;
+}
+
+.edit-bar .shared {
+	font-size: 14px;
+	color: #555;
+}
+
+.edit-bar .spacer,
+.dialog .spacer {
+	flex: 1;
+}
+
+.page-bar {
+	background: #fff8db;
+	border-color: #e6cf5a;
+}
+
+.add-existing {
+	font: 15px system-ui, sans-serif;
+	padding: 4px 8px;
+	border-radius: 8px;
+	max-width: 100%;
+}
+
+.link-tools {
+	display: flex;
+	justify-content: center;
+	gap: 4px;
+	margin-top: 6px;
+}
+
+.link-tools button {
+	padding: 2px 8px;
+	font-size: 14px;
+}
+
+.add-link {
+	align-self: center;
+	margin: 5px 20px;
+	width: 180px;
+	height: 200px;
+	border: 2px dashed #9db5ef;
+	background: #f3f6fe;
+	font-size: 18px;
+}
+
+.dialog fieldset {
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 16px;
+}
+
+.dialog legend {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.dialog label.checkbox {
+	flex-direction: row;
+	align-items: center;
+	gap: 6px;
+	font-weight: normal;
+}
+
+.link-dialog {
+	width: min(560px, calc(100vw - 32px));
+}
+
+.picture-field {
+	display: flex;
+	gap: 12px;
+	align-items: flex-start;
+}
+
+.picture-preview {
+	flex: none;
+	width: 140px;
+	height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #f4f4f4;
+	border-radius: 8px;
+	color: #888;
+	font-size: 14px;
+}
+
+.picture-preview img {
+	max-width: 140px;
+	max-height: 120px;
+	height: auto;
+}
+
+.picture-inputs {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.dialog label.upload input {
+	font-size: 14px;
+	padding: 4px;
+}

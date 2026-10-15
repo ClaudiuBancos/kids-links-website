@@ -56,6 +56,29 @@ async function signOut() {
 	await sleep(300);
 }
 
+const count = (selector) => page.evaluate(`document.querySelectorAll(${JSON.stringify(selector)}).length`);
+const rowTitles = (row) => page.evaluate(`[...document.querySelectorAll(".flex")[${row}].querySelectorAll(".link-div p")].map((p) => p.textContent)`);
+
+async function clickButton(text) {
+	await page.evaluate(`[...document.querySelectorAll("button")].find((b) => b.textContent === ${JSON.stringify(text)}).click()`);
+	await sleep(300);
+}
+
+// Types into the first matching field of the open box, the way a person would (so Preact hears it).
+async function fill(selector, value) {
+	await page.evaluate(`(() => {
+		const input = document.querySelector("dialog[open]").querySelector(${JSON.stringify(selector.replace("dialog[open] ", ""))});
+		input.value = ${JSON.stringify(value)};
+		input.dispatchEvent(new Event("input", { bubbles: true }));
+	})()`);
+}
+
+async function saveDialog() {
+	await page.evaluate(`document.querySelector("dialog[open] form").requestSubmit()`);
+	await waitFor(`!document.querySelector("dialog[open]")`);
+	await sleep(300);
+}
+
 async function brokenImages() {
 	await waitFor(`[...document.images].every((img) => img.complete)`);
 	return page.evaluate(`[...document.images].filter((img) => !img.naturalWidth).map((img) => img.getAttribute("src"))`);
@@ -133,6 +156,91 @@ try {
 	check("Claudiu can see the home page", (await pathname()) === "/" && (await heading()) === "Bancos Kids' Links");
 	await open("/nathan");
 	check("Claudiu can open Nathan's page", (await pathname()) === "/nathan");
+
+	// Claudiu's edit mode (test mode: changes stay in this tab's memory)
+	await open("/luke");
+	await page.evaluate(`window.confirm = () => true`);
+	await clickButton("✎ Edit");
+	check("edit mode shows a bar per section", (await count(".section-bar")) === (await count(".page-bar")) * 13, String(await count(".section-bar")));
+
+	// Add a link to Luke's top row; the title comes from the address
+	await page.evaluate(`document.querySelector(".add-link").click()`);
+	await waitFor(`document.querySelector("dialog[open]")`);
+	await fill("input[type=url]", "https://www.ixl.com/math/grade-4/add-fractions-with-like-denominators");
+	check("a new link's title comes from its address", (await page.evaluate(`document.querySelectorAll("dialog[open] input")[1].value`)) === "Add Fractions With Like Denominators");
+	await fill(".picture-inputs input", "LukeTypingBulbasaur.png");
+	await saveDialog();
+	let top = await rowTitles(0);
+	check("the new link is at the end of Luke's top row", top.at(-1) === "Add Fractions With Like Denominators", top.join(", "));
+
+	// Move it left, rename it, then delete it
+	await page.evaluate(`[...document.querySelectorAll(".flex")[0].querySelectorAll(".link-div")].at(-1).querySelector("button[title='Move left']").click()`);
+	await sleep(300);
+	top = await rowTitles(0);
+	check("moving a link left", top.at(-2) === "Add Fractions With Like Denominators", top.join(", "));
+	await page.evaluate(`[...document.querySelectorAll(".flex")[0].querySelectorAll(".link-div")].at(-2).querySelector("a").click()`);
+	await waitFor(`document.querySelector("dialog[open]")`);
+	await fill("dialog[open] input:not([type])", "Fractions!");
+	await saveDialog();
+	check("renaming a link", (await rowTitles(0)).includes("Fractions!"), (await rowTitles(0)).join(", "));
+	await page.evaluate(`[...document.querySelectorAll(".link-div")].find((d) => d.textContent.includes("Fractions!")).querySelector("button[title='Delete']").click()`);
+	await sleep(300);
+	check("deleting a link", !(await linkTitles()).includes("Fractions!"));
+
+	// A new section, only on Luke's page
+	await clickButton("+ New section");
+	await waitFor(`document.querySelector("dialog[open]")`);
+	await fill("dialog[open] input", "Test Section");
+	await saveDialog();
+	check("a new section appears at the end", (await page.evaluate(`[...document.querySelectorAll(".section-name")].at(-1).textContent`)) === "Test Section");
+	await page.evaluate(`[...document.querySelectorAll(".add-link")].at(-1).click()`);
+	await waitFor(`document.querySelector("dialog[open]")`);
+	await fill("input[type=url]", "https://example.com/");
+	await fill("dialog[open] input:not([type])", "Example");
+	await saveDialog();
+	check("a link in the new section", (await linkTitles()).includes("Example"));
+
+	// Move the new section up one
+	await page.evaluate(`[...document.querySelectorAll(".section-bar")].at(-1).querySelector("button[title='Move up']").click()`);
+	await sleep(300);
+	check("moving a section up", (await page.evaluate(`[...document.querySelectorAll(".section-name")].at(-2).textContent`)) === "Test Section");
+
+	await page.evaluate(`[...document.querySelectorAll(".page-nav a")].find((a) => a.textContent === "Nathan").click()`);
+	await waitFor(`document.querySelector("h1")?.textContent === "Nathan's Links"`);
+	await sleep(300);
+	check("the new section isn't on Nathan's page", !(await linkTitles()).includes("Example"));
+
+	// Put the new section on Nathan's page too, from "Add a section"
+	await page.evaluate(`(() => {
+		const select = document.querySelector(".add-existing");
+		select.value = [...select.options].find((o) => o.text.startsWith("Test Section")).value;
+		select.dispatchEvent(new Event("change", { bubbles: true }));
+	})()`);
+	await sleep(400);
+	check("adding an existing section to another page", (await linkTitles()).includes("Example"));
+	check("a shared section says where else it is", (await page.evaluate(`[...document.querySelectorAll(".section-bar")].at(-1).textContent`)).includes("also on Luke"));
+
+	// Delete the section everywhere
+	await page.evaluate(`[...document.querySelectorAll(".section-bar")].at(-1).querySelector("button:last-child").click()`);
+	await waitFor(`document.querySelector("dialog[open]")`);
+	await page.evaluate(`[...document.querySelectorAll("dialog[open] button")].find((b) => b.textContent === "Delete").click()`);
+	await sleep(400);
+	check("deleting a section", !(await linkTitles()).includes("Example") && !(await dialogOpen()));
+
+	// The page's heading and name
+	await clickButton("✎ Heading");
+	await waitFor(`document.querySelector("dialog[open]")`);
+	await fill("dialog[open] input", "Nathan's Great Links");
+	await saveDialog();
+	await sleep(300);
+	check("changing a page's heading", (await heading()) === "Nathan's Great Links");
+
+	await clickButton("Done editing");
+	check("done editing hides the editing bars", (await count(".edit-bar")) === 0 && (await count(".link-tools")) === 0);
+	await signOut();
+
+	await signIn("luke@test");
+	check("Luke gets no Edit button", !(await page.evaluate(`[...document.querySelectorAll("button")].some((b) => b.textContent.includes("Edit"))`)));
 	await signOut();
 } finally {
 	page.close();
