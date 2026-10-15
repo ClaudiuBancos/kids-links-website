@@ -1,0 +1,4 @@
+# Every address that isn't a real file is served the one page; App.js works out
+# which person's page to show. A 200 rewrite rather than a redirect, so the
+# address bar keeps /luke instead of bouncing to /index.html.
+/*  /index.html  200

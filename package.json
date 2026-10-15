@@ -1,0 +1,10 @@
+{
+	"name": "kids-links-website",
+	"private": true,
+	"type": "module",
+	"description": "Picture links for the kids. No build step and no dependencies: the browser loads everything from esm.sh.",
+	"scripts": {
+		"dev": "node tools/serve.mjs",
+		"test": "node tools/browser-test.mjs"
+	}
+}

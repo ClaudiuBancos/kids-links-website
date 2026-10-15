@@ -1,3 +1,165 @@
+/* The page's own text keeps the browser's default font; the controls use the system's */
+.top-bar,
+.dialog,
+.message {
+	font-family: system-ui, sans-serif;
+}
+
+button {
+	font: 16px system-ui, sans-serif;
+	padding: 6px 14px;
+	border: 1px solid #bbb;
+	border-radius: 8px;
+	background: #f4f4f4;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #e8e8e8;
+}
+
+button.primary {
+	background: #2463eb;
+	border-color: #2463eb;
+	color: white;
+}
+
+button.primary:hover {
+	background: #1d4fc4;
+}
+
+button:disabled {
+	opacity: 0.6;
+	cursor: default;
+}
+
+/* The bar along the top: every page on the left (admin only), Log in / Sign out on the right */
+.top-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	flex-wrap: wrap;
+	min-height: 40px;
+}
+
+.page-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+}
+
+.page-nav a {
+	font-size: 16px;
+	font-weight: normal;
+	padding: 4px 10px;
+	border-radius: 8px;
+}
+
+.page-nav a:hover {
+	background: #eee;
+}
+
+.page-nav a.current {
+	background: #dde7fd;
+	font-weight: bold;
+}
+
+.account {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-left: auto;
+}
+
+.user-name {
+	font-weight: bold;
+}
+
+.test-badge {
+	background: #fff3b0;
+	border: 1px solid #e6cf5a;
+	border-radius: 6px;
+	padding: 2px 8px;
+	font-size: 14px;
+}
+
+h1 {
+	margin-top: 4px;
+}
+
+.message {
+	font-size: 20px;
+	color: #555;
+}
+
+.error {
+	color: #b42318;
+}
+
+.divider {
+	width: 100%;
+	border: 1px solid #ccc;
+}
+
+/* Pop-up boxes (sign in, and the admin's editors) */
+.dialog {
+	border: none;
+	border-radius: 14px;
+	padding: 24px;
+	width: min(420px, calc(100vw - 32px));
+	box-sizing: border-box;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.dialog::backdrop {
+	background: rgba(0, 0, 0, 0.35);
+}
+
+.dialog h2 {
+	margin: 0 0 16px;
+}
+
+.dialog form {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.dialog label {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.dialog input,
+.dialog select {
+	font: inherit;
+	font-weight: normal;
+	padding: 8px;
+	border: 1px solid #bbb;
+	border-radius: 8px;
+}
+
+.dialog .hint {
+	margin: 0;
+	font-size: 14px;
+	color: #666;
+}
+
+.dialog .error {
+	margin: 0;
+}
+
+.dialog .buttons {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	margin-top: 4px;
+}
+
 .flex {
 	display: flex;
 	flex-wrap: wrap;
