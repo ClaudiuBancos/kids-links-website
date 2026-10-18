@@ -1,12 +1,46 @@
-import { createClient } from "@supabase/supabase-js";
+import { createBrowserClient } from "@supabase/ssr";
 import { useEffect, useState } from "preact/hooks";
 import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY } from "./config.js";
 
 // Signing in, with the same email + password accounts as the platformer game. Supabase keeps
-// the sign-in in this browser's localStorage, so people stay signed in until they sign out.
+// the sign-in in a cookie, so people stay signed in until they sign out.
 // A user here is { id, name }: the Auth account ID and its display name ("Luke").
+//
+// The family's sites on claudiu.win (this one, the platformer, the retro card game) all keep the
+// sign-in in the same cookie, set for the whole domain: signing in on one signs in on all of them,
+// and signing out signs out of all of them, in this browser. Anywhere else (the dev server) the
+// cookie is this site's alone. Each of those projects has a copy of this; keep them alike.
+// (@supabase/ssr is esm.sh's build that uses the supabase-js in index.html's import map.)
 
-export const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+const SHARED_DOMAIN = "claudiu.win";
+const shared = location.hostname === SHARED_DOMAIN || location.hostname.endsWith(`.${SHARED_DOMAIN}`);
+
+export const supabase = createBrowserClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+	cookieOptions: { secure: location.protocol === "https:", ...(shared ? { domain: SHARED_DOMAIN } : {}) },
+});
+
+// Before the shared cookie, each site kept its own sign-in in localStorage, under this name
+const OLD_SIGN_IN_KEY = `sb-${new URL(SUPABASE_URL).hostname.split(".")[0]}-auth-token`;
+
+// Moves a sign-in left in localStorage from before the shared cookie into it, so nobody has to sign in again.
+async function adoptOldSignIn() {
+	let old = null;
+	try {
+		old = localStorage.getItem(OLD_SIGN_IN_KEY);
+		if (old) localStorage.removeItem(OLD_SIGN_IN_KEY);
+	} catch {
+		return; // storage blocked, so there's nothing left in it
+	}
+	if (!old) return;
+	const { data } = await supabase.auth.getSession();
+	if (data.session) return; // already signed in through the cookie, maybe on another family site
+	try {
+		const { access_token, refresh_token } = JSON.parse(old);
+		await supabase.auth.setSession({ access_token, refresh_token });
+	} catch {
+		// unreadable or long expired: they'll sign in again
+	}
+}
 
 // Test mode, for trying things on this computer without touching Supabase: open any address
 // with ?test on localhost. It lasts for this tab. Anyone can sign in with any password and an
@@ -22,6 +56,9 @@ function rememberTestMode() {
 		return new URLSearchParams(location.search).has("test");
 	}
 }
+
+// Done once the old sign-in, if any, has moved into the cookie (test mode never touches it)
+const adopted = testMode ? Promise.resolve() : adoptOldSignIn();
 
 function toUser(account) {
 	if (!account) return null;
@@ -79,12 +116,20 @@ export function useUser() {
 			return () => testListeners.delete(setUser);
 		}
 		// Fires straight away with the remembered session (INITIAL_SESSION), then on every change.
-		const { data } = supabase.auth.onAuthStateChange((_event, session) => {
-			const next = toUser(session?.user);
-			// Token refreshes come through here too; keep the same object so pages don't reload.
-			setUser((current) => (current?.id === next?.id && current !== undefined ? current : next));
+		let subscription = null;
+		let done = false;
+		adopted.then(() => {
+			if (done) return;
+			subscription = supabase.auth.onAuthStateChange((_event, session) => {
+				const next = toUser(session?.user);
+				// Token refreshes come through here too; keep the same object so pages don't reload.
+				setUser((current) => (current?.id === next?.id && current !== undefined ? current : next));
+			}).data.subscription;
 		});
-		return () => data.subscription.unsubscribe();
+		return () => {
+			done = true;
+			subscription?.unsubscribe();
+		};
 	}, []);
 	return user;
 }
