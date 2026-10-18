@@ -102,9 +102,11 @@ export async function signIn(email, password) {
 	return toUser(data.user);
 }
 
+// Signs out of this browser (on all the family sites at once). Anyone signed in to the same
+// account on another computer stays signed in there.
 export async function signOut() {
 	if (testMode) return setTestUser(null);
-	await supabase.auth.signOut();
+	await supabase.auth.signOut({ scope: "local" });
 }
 
 // The signed-in user: undefined while finding out, then null or { id, name }.
