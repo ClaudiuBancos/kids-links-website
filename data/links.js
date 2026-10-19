@@ -32,8 +32,8 @@ export const sections = {
 	"family-games": {
 		title: null,
 		links: [
-			{ title: "Super Pokemon World", url: "https://super-pokemon-world.netlify.app/", image: "SuperPokemonWorld.png", style: "br-20" },
-			{ title: "Pokemon TCG Retro", url: "https://pokemon-tcg-retro.netlify.app/", image: "PokemonTCGRetro.webp", style: "br-20" },
+			{ title: "Super Pokemon World", url: "https://super-pokemon-world.claudiu.win/", image: "SuperPokemonWorld.png", style: "br-20" },
+			{ title: "Pokemon TCG Retro", url: "https://pokemon-tcg-retro.claudiu.win/", image: "PokemonTCGRetro.webp", style: "br-20" },
 			{ title: "Pokemon Uno", url: "https://pokemon-uno.netlify.app/", image: "PokemonUno.webp", style: "br-20" },
 			{ title: "Frozen Assets", url: "https://celestebancos.github.io/frozen-assets/", image: "FrozenAssets.png" },
 			{ title: "Nathan's Tixy", url: "https://celestebancos.github.io/tixy-quest/", image: "nathan_tixy.png", style: "br-20" },
