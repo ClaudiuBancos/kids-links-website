@@ -1,2 +1,5 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Text files are LF, in the repo and on disk, whatever core.autocrlf says (Git for Windows sets it true)
+* text=auto eol=lf
+# cmd.exe expects CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
