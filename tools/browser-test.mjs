@@ -28,7 +28,7 @@ async function waitFor(expression, timeout = 8000) {
 
 async function open(path) {
 	await page.send("Page.navigate", { url: base + path });
-	await waitFor(`document.readyState === "complete" && document.querySelector("h1, dialog[open]")`);
+	await waitFor(`document.readyState === "complete" && document.querySelector("h1, dialog[open], .blocked")`);
 	await sleep(200); // let redirects settle
 }
 
@@ -95,6 +95,18 @@ try {
 	await open("/luke");
 	check("live: Luke's page asks you to log in", await dialogOpen());
 
+	// The blocked page, against the real database: signed out, nobody is blocked, so Try again goes back
+	const blockedText = () => page.evaluate(`document.querySelector(".blocked p")?.textContent`);
+	await open(`/blocked?game=platformer&back=${encodeURIComponent(`${base}/nobody-back`)}`);
+	check("live: the blocked page shows, and stays put", (await blockedText()) === "Blocked by Daddy. Fix the problem and try again." && (await pathname()) === "/blocked", await pathname());
+	await clickButton("Try again");
+	await waitFor(`location.pathname !== "/blocked"`);
+	check("live: Try again asks the database, and goes back once allowed", (await pathname()) === "/" , await pathname()); // /nobody-back is no page, so it lands home
+	await open(`/blocked?game=platformer&back=${encodeURIComponent("https://example.com/")}`);
+	await clickButton("Try again");
+	await waitFor(`location.pathname !== "/blocked"`);
+	check("live: Try again won't go back to a site outside the family", await page.evaluate(`location.origin === ${JSON.stringify(base)}`), await page.evaluate("location.href"));
+
 	// Test mode from here on. Signed out
 	await open("/?test");
 	check("home page shows", (await heading()) === "Bancos Kids' Links", await heading());
@@ -123,6 +135,12 @@ try {
 	check("Luke sees his own links", lukeLinks.includes("Luke Daily Bancos") && lukeLinks.includes("Luke's IXL Assignment"));
 	check("Luke doesn't see Nathan's links", !lukeLinks.some((t) => t.startsWith("Nathan Daily")));
 	check("Luke gets no page list", (await navNames()).length === 0);
+	await open(`/blocked?game=test-blocked&back=${encodeURIComponent(`${base}/luke`)}`);
+	check("a kid on the blocked page isn't sent to their own page", (await pathname()) === "/blocked", await pathname());
+	await clickButton("Try again");
+	await sleep(400);
+	check("still blocked: Try again stays on the blocked page", (await pathname()) === "/blocked", await pathname());
+	await open("/luke");
 	check("every picture on Luke's page loads", (await brokenImages()).length === 0);
 
 	await open("/nathan");

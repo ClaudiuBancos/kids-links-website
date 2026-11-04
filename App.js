@@ -1,6 +1,7 @@
 import { h } from "preact";
 import { useEffect, useState } from "preact/hooks";
 import htm from "htm";
+import Blocked from "./components/Blocked.js";
 import Page from "./components/Page.js";
 import SignInDialog from "./components/SignInDialog.js";
 import { NavLink, navigate, usePath } from "./router.js";
@@ -13,6 +14,7 @@ const html = htm.bind(h);
 // the bar at the top (Log in / Sign out; for the admin, every page and the Edit switch).
 //   /         the home page, for when nobody is signed in. A signed-in kid is sent to their own page.
 //   /luke     Luke's page: only for Luke, and for the admin (Claudiu). Signed out, it asks you to log in.
+//   /blocked  where a family game sends a kid a parent has blocked (components/Blocked.js). Open to everyone.
 // The links themselves live in the store (store.js); App.js only decides which page to show.
 
 function usePages() {
@@ -45,7 +47,8 @@ export default function App() {
 	const page = pages?.find((p) => p.slug === slug);
 	const mine = user && pages ? pages.find((p) => ownsPage(p, user)) ?? null : null;
 	const ready = user !== undefined && pages !== undefined;
-	const redirect = ready ? redirectFor(slug, page, user, mine) : null;
+	const blocked = slug === "blocked";
+	const redirect = ready && !blocked ? redirectFor(slug, page, user, mine) : null;
 
 	useEffect(() => {
 		if (redirect) navigate(redirect, { replace: true });
@@ -55,6 +58,7 @@ export default function App() {
 		if (page) document.title = page.title;
 	}, [page]);
 
+	if (blocked) return html`<${Blocked} />`;
 	if (error) return html`<p class="message error">Couldn't load the pages: ${error}</p>`;
 	if (!ready || redirect) return null;
 
