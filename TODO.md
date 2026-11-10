@@ -6,7 +6,7 @@ ARCHITECTURE.md maps the code; this file just tracks the work.
 
 ## Try it for real
 - [ ] Push, and check on Netlify that `/luke` etc. load (needs `_redirects`) and that each kid's login lands on their page
-- [ ] Log in as Claudiu on the live site and edit something: the database's rules were tested in SQL, but no real admin save or picture upload has run from a browser yet
+- [x] Log in as Claudiu on the live site and edit something: the database's rules were tested in SQL, but no real admin save or picture upload has run from a browser yet
 - [ ] Look over which sections ended up on which page (a first guess: each kid's page is their personal row plus everything shared; Luke also has Science; Claudiu's has Tools) and rearrange in edit mode
 - [ ] The Bancos Family Database has three older tables with Row Level Security off (`pokemon`, `expenses`, `check_in_responses`), so anyone with the publishable key can read and change them. Not this site's, but it shares the key. Decide whether to lock them down
 
