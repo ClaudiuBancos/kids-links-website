@@ -1,8 +1,7 @@
 # To Do
-
 A shared list. Either of us can add, edit, reorder, or check things off.
-Check off done items with `- [x]`; they get removed (git log is the record).
-Ideas set aside for later: [docs/MAYBE_SOMEDAY.md](docs/MAYBE_SOMEDAY.md).
+Check off done subtasks with `- [x]`; completed top-level items get removed (git log is the record).
+Ideas set aside for later: docs/MAYBE_SOMEDAY.md.
 
 ## Try it for real
 - [ ] Push, and check on Netlify that `/luke` etc. load (needs `_redirects`) and that each kid's login lands on their page
