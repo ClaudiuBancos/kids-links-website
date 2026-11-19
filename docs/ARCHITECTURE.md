@@ -17,7 +17,7 @@ The links live in Supabase (project "Bancos Family Database", the same accounts 
 - `components/Link.js` — One titled picture link. `imageUrl()`: a path under `images/`, or a full URL (uploads). In edit mode, clicking opens it for editing, with move/delete buttons below.
 - `components/Dialogs.js` — The admin's boxes: `LinkDialog` (address, title filled in from the address, picture by path, upload or paste, corners, section), `SectionDialog` (heading, starts closed, which pages it's on, delete), `PageDialog` (heading, name).
 - `components/SignInDialog.js` — Email + password.
-- `components/Blocked.js` — `/blocked?game=<key>&back=<url>`: where a family game sends a kid a parent has blocked ("Blocked by Daddy…" + Try again). Try again calls `has_game_access` (the `game_access` migration, kept in `platformer-game/supabase/migrations/`); allowed → back to `back`, only if it's a claudiu.win or localhost address. Open to everyone, so App.js never redirects away from it. Test mode: only the game `test-blocked` is blocked.
+- `components/Blocked.js` — `/blocked?game=<key>&back=<url>`: where a family game sends a kid a parent has blocked ("Blocked by Daddy…" + Try again). Try again calls `has_game_access` (the `game_access` migration, owned by `personal-admin-panel/supabase/migrations/`); allowed → back to `back`, only if it's a claudiu.win or localhost address. Open to everyone, so App.js never redirects away from it. Test mode: only the game `test-blocked` is blocked.
 - `index.css` — All styling.
 - `images/` — Thumbnails for the links (new ones are uploaded to Storage instead). `images/archive/`, `images/homeschooling/archive/` are unused ones kept for swapping back in.
 

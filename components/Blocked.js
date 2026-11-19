@@ -6,7 +6,7 @@ import { supabase, testMode } from "../auth.js";
 const html = htm.bind(h);
 
 // /blocked?game=platformer&back=<the game's address>: where the family games send a kid a parent has blocked
-// (game_access in the database; see platformer-game/docs/plans/game-access.md). Try Again asks the database again:
+// (game_access in the database; its migration and switches are in the personal-admin-panel repo). Try Again asks again:
 // allowed now, it goes back to the game; still blocked, it stays. It only goes back to claudiu.win (or this
 // computer's) addresses, so the link can't be used to send someone elsewhere.
 
